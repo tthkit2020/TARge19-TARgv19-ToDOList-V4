@@ -8,7 +8,7 @@
         <% for(var i = 0; i < toDoItems.length; i++) { %>
             <div class="item">
                 <input type="checkbox">
-                <p><%= toDoItems[i] %></p>
+                <p><%= toDoItems[i].description %></p>
             </div>
         <% } %>
         <form action="/" class="class" method="POST">
