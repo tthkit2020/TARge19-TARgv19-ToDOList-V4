@@ -22,3 +22,9 @@ exports.postNewItem = (req, res) => {
     toDoList.push(newTask);*/
     res.redirect("/");
 };
+
+exports.deleteItem = (req, res) => {
+    console.log("Call from delete", req.body.checkbox);
+    Task.deleteItem(req.body.checkbox);
+    res.redirect('/');
+}
