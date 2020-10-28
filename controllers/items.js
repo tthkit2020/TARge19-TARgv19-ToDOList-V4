@@ -3,11 +3,15 @@ const Task = require('../models/task');
 //let toDoList = [];
 
 exports.getMainPage = (req, res) => {
-    let weekday = date.getDate();
+    Task.fetchTasks(items  => {
+        let day = date.getDate();
+        res.render("index.ejs", {date: day, toDoItems: items});
+    });
+   /* let weekday = date.getDate();
     const itemsList = Task.fetchTasks();
    /* let weekday = date.getWeekDay();
-    console.log(day);*/
-    res.render("index.ejs", {date: weekday, toDoItems: itemsList});
+    console.log(day);
+    res.render("index.ejs", {date: weekday, toDoItems: itemsList});*/
 };
 
 exports.postNewItem = (req, res) => {
