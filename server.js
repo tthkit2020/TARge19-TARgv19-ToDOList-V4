@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+require('./models/db');
+
 const mainPage = require('./routes/main');
 const getError = require('./routes/404');
 
